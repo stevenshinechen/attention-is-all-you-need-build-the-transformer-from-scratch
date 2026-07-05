@@ -32,8 +32,12 @@ def decode_ids_to_tokens(ids, id_to_token):
     # TODO: map each id in ids to its token string via id_to_token and return the list
     return [id_to_token[token_id] for token_id in ids]
 
-# Step 5 - pad_id_sequence (not yet solved)
-# TODO: implement
+# Step 5 - pad_id_sequence
+def pad_id_sequence(ids, max_len, pad_id):
+    # TODO: return a list of length exactly max_len, padding with pad_id or truncating.
+    padded_ids = ids[:max_len]
+    padded_ids.extend((max_len - len(padded_ids)) * [pad_id])
+    return padded_ids
 
 # Step 6 - stack_padded_sequences_to_batch (not yet solved)
 # TODO: implement
